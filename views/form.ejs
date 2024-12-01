@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>글 작성하기</title>
+    <link rel="stylesheet" href="form.css" />
+  </head>
+  <body>
+    <%- include('nav.html') %>
+    <div class="title-space">글 쓰기</div>
+    <div class="container">
+      <form action="/add" class="form-grid" target="_self" method="post">
+        <div class="grid-item form-title">
+          <label for="writing-title" id="title">제목 :</label>
+          <input
+            type="text"
+            class="title-input long"
+            name="writing-title"
+            id="writing-title"
+          />
+        </div>
+        <div class="grid-item form-writer">
+          <label for="writing-writer" id="writer">작성자 명 :</label>
+          <input
+            type="text"
+            class="writer-input short"
+            name="writing-writer"
+            id="writing-writer"
+          />
+        </div>
+        <div class="grid-item form-date">
+          <label for="writing-date" id="date">날짜 :</label>
+          <input
+            type="date"
+            class="date-input short"
+            name="writing-date"
+            id="writing-date"
+          />
+        </div>
+        <div class="grid-item write-text">
+          <textarea
+            name="writing-writing"
+            id="writing"
+            required
+            placeholder="여기에 글을 작성하세요."
+          ></textarea>
+        </div>
+        <div class="grid-item form-buttons">
+          <button class="reset" type="reset">초기화</button>
+          <button class="submit" type="submit">저장</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
