@@ -10,14 +10,15 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 app.set("view engine", "ejs");
 var db;
+const port = process.env.PORT || 3000;
 
 MongoClient.connect(
   "mongodb+srv://khw18837:Khwmongodb1!@cluster0.o3xdh.mongodb.net/writing-api?retryWrites=true&w=majority",
   function (err, client) {
     if (err) return console.log(err);
     db = client.db("writing-api");
-    app.listen(8080, function () {
-      console.log("listening on port 8080");
+    app.listen(port, () => {
+      console.log(`Server running on port ${port}`);
     });
   }
 );
