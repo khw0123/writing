@@ -17,7 +17,7 @@ MongoClient.connect(
   function (err, client) {
     if (err) return console.log(err);
     db = client.db("writing-api");
-    app.listen(port, () => {
+    app.listen(port, "0.0.0.0", () => {
       console.log(`Server running on port ${port}`);
     });
   }
