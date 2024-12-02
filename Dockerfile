@@ -11,7 +11,8 @@ COPY package*.json ./
 RUN npm install
 
 # 애플리케이션 소스 코드 복사
-COPY . .
+COPY . /app
+
 
 # 앱 실행 포트 설정 (예: 3000)
 EXPOSE 3000
